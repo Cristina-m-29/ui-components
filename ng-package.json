@@ -1,0 +1,7 @@
+{
+  "$schema": "./node_modules/ng-packagr/package.schema.json",
+  "lib": {
+    "entryFile": "./src/lib/public_api.ts"
+  },
+  "allowedNonPeerDependencies": [ "angular", "core-js", "ng-packagr", "rxjs", "zone.js" ]
+}
