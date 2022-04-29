@@ -1,3 +1,10 @@
 <h1>This is a button</h1>
 
-<mc-button (handleClick)="print()">TESTING button</mc-button>
+<mc-button
+  (click)="handleOnClickEvent($event)"
+  (focus)="handleOnFocusEvent($event)"
+  (mouseenter)="handleOnMouseEnter($event)"
+  (mouseleave)="handleOnMouseLeave($event)"
+>
+  Rag 123
+</mc-button>
