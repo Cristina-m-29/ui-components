@@ -1,7 +1,17 @@
+<div *ngIf="type === 'outline'" class="mc-gradient-border" [ngClass]="getGradientBorderCssClass()"></div>
+
 <button
-  class="mc-button mc-display-1"
-  [ngClass]="getCssClasses()"
+  class="mc-button"
+  [ngClass]="getButtonCssClasses()"
   (focus)="handleOnFocusEvent($event)"
 >
-  <ng-content></ng-content>
+  <div
+    *ngIf="showOverlay"
+    class="mc-button-overlay mc-button-overlay-white"
+    [ngClass]="getOverlayCssClasses()"
+  ></div>
+
+  <span class="mc-text-body-1">
+    <ng-content></ng-content>
+  </span>
 </button>

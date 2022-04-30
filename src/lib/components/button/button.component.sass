@@ -1,36 +1,145 @@
 @use '../../styles/_colors' as colors
 
 :host
+  position: relative
+
   .mc-button
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    border: none
+    border-radius: 0.5rem //8px
+
     &-light
-      &-no-icon
-        color: colors.$mc-primary-main !important
-
-      &-only-icon
-        color: black !important
-
-
+      /* Background type */
       &-primary
-        background-color: purple !important
+        background-color: colors.$mc-primary-main
+        color: colors.$mc-light-4
 
       &-secondary
-        background-color: blue !important
+        background-color: colors.$mc-light-3
+        color: colors.$mc-primary-main
 
       &-tertinary
-        background-color: red !important
+        background-color: transparent
+        color: colors.$mc-primary-main
 
       &-outline
-        background-color: green !important
+        background-color: colors.$mc-light-4
+        color: colors.$mc-primary-main
 
+      /* Types (no icon)*/
+      &-no-icon
+        /* Sizes */
+        &-extra-large
+          width: 9.375rem //150px
+          height: 3rem //48px
 
+        &-large
+          width: 8.438rem //135px
+          height: 2.5rem //40px
+
+        &-medium
+          width: 7.813rem //125 px
+          height: 2.25rem //36px
+
+        &-small
+          width: 6.875rem //110px
+          height: 2rem //32px
+
+      /* Types (only icon)*/
+      &-only-icon
+        /* Sizes */
+        &-extra-large
+          width: 3rem //48px
+          height: 3rem //48px
+
+        &-large
+          width: 2.5rem //40px
+          height: 2.5rem //40px
+
+        &-medium
+          width:  2.25rem //36px
+          height: 2.25rem //36px
+
+        &-small
+          width: 2rem //32px
+          height: 2rem //32px
+
+    &-overlay
+      position: absolute
+      border-radius: 0.5rem //8px
+
+      &-white
+        background: colors.$mc-gradient-white
+
+  .mc-gradient-border
+    position: absolute
+    z-index: -1
+    border-radius: 0.5rem
+    background: linear-gradient(93.94deg, rgba(80, 56, 179, 0.75) 5.36%, rgba(80, 56, 179, 0.4) 98.32%)
+
+    &-no-icon
+      /* Sizes */
       &-extra-large
-        width: 30rem !important
+        top: 40%
+        left: 50%
+        transform: translate(-50%,-50%)
+        width: 9.375rem + 0.325rem //150px
+        height: 3rem + 0.3rem //48px
 
       &-large
-        width: 20rem !important
+        top: 33.5%
+        left: 50.25%
+        transform: translate(-50%,-50%)
+        width: 8.438rem + 0.325rem //135px
+        height: 2.5rem + 0.3rem //40px
 
       &-medium
-        width: 10rem !important
+        top: 30%
+        left: 50.25%
+        transform: translate(-50%,-50%)
+        width: 7.813rem + 0.325rem //125 px
+        height: 2.25rem + 0.3rem //36px
 
       &-small
-        width: 5rem !important
+        top: 27%
+        left: 50.6%
+        transform: translate(-50%,-50%)
+        width: 6.875rem + 0.325rem //110px
+        height: 2rem + 0.3rem //32px
+
+    /* Types (only icon)*/
+    &-only-icon
+      /* Sizes */
+      &-extra-large
+        top: 40%
+        left: 50%
+        transform: translate(-50%,-50%)
+        width: 3rem + 0.325rem //48px
+        height: 3rem + 0.325rem //48px
+
+      &-large
+        top: 33.5%
+        left: 50.25%
+        transform: translate(-50%,-50%)
+        width: 2.5rem + 0.325rem //40px
+        height: 2.5rem + 0.325rem //40px
+
+      &-medium
+        top: 30%
+        left: 50.25%
+        transform: translate(-50%,-50%)
+        width:  2.25rem + 0.325rem //36px
+        height: 2.25rem + 0.325rem //36px
+
+      &-small
+        top: 27%
+        left: 50.6%
+        transform: translate(-50%,-50%)
+        width: 2rem + 0.325rem //32px
+        height: 2rem + 0.325rem //32px
+
+  .mc-border-for-gradient
+    border-radius: 0.35rem !important

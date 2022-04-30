@@ -4,12 +4,18 @@ import { McButtonSizeEnum, McButtonStyleEnum, McButtonTypeEnum } from './button.
 @Component({
   selector: 'mc-button',
   templateUrl: './button.component.html',
-  styleUrls: ['./button.component.sass', '../../styles/_typography.sass']
+  styleUrls: [
+    './button.component.sass',
+    '../../styles/_typography.sass',
+    '../../styles/_shadows.sass'
+  ]
 })
 export class McButtonComponent implements OnInit {
-  @Input() public style: McButtonStyleEnum = McButtonStyleEnum.NO_ICON;
-  @Input() public type: McButtonTypeEnum = McButtonTypeEnum.PRIMARY;
-  @Input() public size: McButtonSizeEnum = McButtonSizeEnum.MEDIUM;
+  /** Icon type */
+  @Input() public iconStyle: string = McButtonStyleEnum.NO_ICON;
+  @Input() public type: string = McButtonTypeEnum.PRIMARY;
+  @Input() public size: string = McButtonSizeEnum.MEDIUM;
+  @Input() public showOverlay: boolean = true;
 
   @Output() public focus: EventEmitter<FocusEvent> = new EventEmitter();
 
@@ -19,14 +25,25 @@ export class McButtonComponent implements OnInit {
   constructor(private cd: ChangeDetectorRef) {}
 
   ngOnInit(): void {
-    this.getCssClasses();
+    console.log(this.iconStyle, this.type, this.size);
   }
 
-  public getCssClasses(): string {
-    const styleCssClass = `${this.BUTTON}-${this.theme}-${this.style}`;
+  public getButtonCssClasses(): string {
     const typeCssClass = `${this.BUTTON}-${this.theme}-${this.type}`;
-    const sizeCssClass = `${this.BUTTON}-${this.theme}-${this.size}`;
-    return `${styleCssClass} ${typeCssClass} ${sizeCssClass}`;
+    const sizeCssClass = `${this.BUTTON}-${this.theme}-${this.iconStyle}-${this.size}`;
+    const shadowCssClass = this.type !== McButtonTypeEnum.TERTINARY ? 'mc-button-shadow' : '';
+    const gradientBorderCssClass = this.type === McButtonTypeEnum.OUTLINE ? 'mc-border-for-gradient' : '';
+    return `${typeCssClass} ${sizeCssClass} ${shadowCssClass} ${gradientBorderCssClass}`;
+  }
+
+  public getOverlayCssClasses(): string {
+    const sizeCssCLass = `${this.BUTTON}-${this.theme}-${this.iconStyle}-${this.size}`
+    const gradientBorderCssClass = this.type === McButtonTypeEnum.OUTLINE ? 'mc-border-for-gradient' : '';
+    return `${sizeCssCLass} ${gradientBorderCssClass}`;
+  }
+
+  public getGradientBorderCssClass(): string {
+    return `mc-gradient-border-${this.iconStyle}-${this.size}`;
   }
 
   public handleOnFocusEvent(event: FocusEvent): void {
