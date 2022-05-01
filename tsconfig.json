@@ -22,6 +22,7 @@
       "es2020",
       "dom"
     ],
+    "esModuleInterop": true,
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -30,5 +31,4 @@
     "strictTemplates": true
   },
   "allowSyntheticDefaultImports": true,
-  "esModuleInterop": true,
 }
