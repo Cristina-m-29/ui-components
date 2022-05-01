@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { McButtonModule } from 'dist';
-import { McTextModule } from 'src/lib/public_api';
-
+import { McButtonModule, McTextModule } from 'dist';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app.routing.module';
+import { ButtonComponent } from './preview-components/button/button.component';
+import { TextComponent } from './preview-components/text/text.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ButtonComponent,
+    TextComponent,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     McButtonModule,
     McTextModule,

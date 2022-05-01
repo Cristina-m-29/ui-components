@@ -1,9 +1,17 @@
-div
-  display: grid
-  grid-template-columns: 7% 43% 10% 40%
-  *
+:host
+  div
     display: flex
-    margin-right: 1rem
+    justify-content: center
+    font-size: 2rem
+    padding-bottom: 1rem
+    border-bottom: 2px solid grey
 
-  h4
-    align-self: flex-start
+    *
+      border: 1px solid
+      padding: 0.5rem 1rem
+      border-radius: 0.5rem
+      margin-right: 1rem
+      cursor: pointer
+
+    *:hover
+      color: red
