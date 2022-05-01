@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { McButtonModule } from 'dist';
+import { McTextModule } from 'src/lib/public_api';
 
 import { AppComponent } from './app.component';
 
@@ -11,6 +12,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     McButtonModule,
+    McTextModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

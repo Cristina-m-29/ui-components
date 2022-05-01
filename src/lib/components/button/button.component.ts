@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { McButtonSizeEnum, McButtonStyleEnum, McButtonTypeEnum } from './button.component.types';
+import { McButtonSize, McButtonStyle, McButtonType, McButtonTypeEnum } from './button.component.types';
 
 @Component({
   selector: 'mc-button',
@@ -12,9 +12,9 @@ import { McButtonSizeEnum, McButtonStyleEnum, McButtonTypeEnum } from './button.
 })
 export class McButtonComponent implements OnInit {
   /** Icon type */
-  @Input() public iconStyle: string = McButtonStyleEnum.NO_ICON;
-  @Input() public type: string = McButtonTypeEnum.PRIMARY;
-  @Input() public size: string = McButtonSizeEnum.MEDIUM;
+  @Input() public iconStyle: McButtonStyle = 'no-icon';
+  @Input() public type: McButtonType = 'primary';
+  @Input() public size: McButtonSize = 'medium';
   @Input() public showOverlay: boolean = true;
 
   @Output() public focus: EventEmitter<FocusEvent> = new EventEmitter();
