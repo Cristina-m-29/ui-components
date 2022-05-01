@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { McUIIcon } from '../../icon/icon.component.types';
 import { McButtonSize, McButtonType, McButtonTypeEnum } from '../button.component.types';
 
 @Component({
@@ -9,12 +10,20 @@ import { McButtonSize, McButtonType, McButtonTypeEnum } from '../button.componen
     '../../../styles/_shadows.sass'
   ]
 })
-export class McIconButtonComponent {
+export class McIconButtonComponent implements AfterViewInit {
+  @Input() public icon: McUIIcon = 'down-circle';
   @Input() public type: McButtonType = 'primary';
   @Input() public size: McButtonSize = 'medium';
   @Input() public showOverlay: boolean = true;
 
   @Output() public focus: EventEmitter<FocusEvent> = new EventEmitter();
+
+  @ViewChild('mcIcon')
+  public mcIcon!: ElementRef;
+
+  ngAfterViewInit() {
+    this.mcIcon.nativeElement.src = `lib/icons/${this.getThemeForIcon()}/${this.icon}.svg`;
+  }
 
   private readonly ICON_BUTTON = 'mc-icon-button'
   private readonly ICON_BUTTON_SHADOW = 'mc-icon-button-shadow';
@@ -33,5 +42,12 @@ export class McIconButtonComponent {
 
   public handleOnFocusEvent(event: FocusEvent): void {
     this.focus.emit(event);
+  }
+
+  private getThemeForIcon(): string {
+    if (this.type === McButtonTypeEnum.PRIMARY) {
+      return this.theme;
+    }
+    return this.theme === 'light' ? 'dark' : 'light';
   }
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { McButtonModule, McTextModule } from 'dist';
+import { McIconModule } from 'src/lib/public_api';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ButtonComponent } from './preview-components/button/button.component';
@@ -16,6 +17,7 @@ import { TextComponent } from './preview-components/text/text.component';
     AppRoutingModule,
     BrowserModule,
     McButtonModule,
+    McIconModule,
     McTextModule,
   ],
   providers: [],
