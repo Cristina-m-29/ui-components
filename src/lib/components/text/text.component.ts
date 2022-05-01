@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { McTextCssClass } from './text.component.types';
+import { McTextType } from './text.component.types';
 
 @Component({
   selector: 'mc-text',
@@ -7,5 +7,5 @@ import { McTextCssClass } from './text.component.types';
   styleUrls: ['./text.component.sass', '../../styles/_typography.sass']
 })
 export class McTextComponent {
-  @Input() public cssClass: McTextCssClass = "mc-text-body-1";
+  @Input() public type: McTextType = "mc-text-body-1";
 }

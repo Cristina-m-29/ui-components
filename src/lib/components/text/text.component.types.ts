@@ -1,4 +1,4 @@
-export declare type McTextCssClass =
+export declare type McTextType =
   'mc-text-display-1' |
   'mc-text-display-2' |
   'mc-text-h1' |
