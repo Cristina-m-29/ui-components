@@ -1,9 +1,3 @@
-export declare type McButtonStyle = 'no-icon' | 'only-icon';
-export enum McButtonStyleEnum {
-  NO_ICON = 'no-icon',
-  ONLY_ICON = 'only-icon',
-}
-
 export declare type McButtonType = 'outline' | 'primary' | 'secondary' | 'tertinary';
 export enum McButtonTypeEnum {
   OUTLINE = 'outline',

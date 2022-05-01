@@ -7,7 +7,6 @@ export { McInputModule } from './components/input/input.module';
 export { McMenuModule } from './components/menu/menu.module';
 export { McRadioButtonModule } from './components/radio-button/radio-button.module';
 export { McSelectModule } from './components/select/select.module';
-
 export { McTextModule } from './components/text/text.module';
 
 export * from './components/index';
