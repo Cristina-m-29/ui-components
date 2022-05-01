@@ -1,9 +1,13 @@
+@use '../../styles/_typography' as typography
 @use '../../styles/_colors' as colors
 
 :host
   position: relative
 
   .mc-button
+    font-family: typography.$inter
+    font-style: typography.$inter-style
+    font-weight: typography.$inter-medium
     position: relative
     display: flex
     justify-content: center
@@ -35,18 +39,30 @@
         &-extra-large
           width: 9.375rem //150px
           height: 3rem //48px
+          font-size: 1.125rem // 18px
+          line-height: 1.75rem //28px
+          letter-spacing: 0rem
 
         &-large
           width: 8.438rem //135px
           height: 2.5rem //40px
+          font-size: 1rem // 16px
+          line-height: 1.5rem //24px
+          letter-spacing: 0rem
 
         &-medium
           width: 7.813rem //125 px
           height: 2.25rem //36px
+          font-size: 0.875rem // 14px
+          line-height: 1.25rem //20px
+          letter-spacing: 0rem
 
         &-small
           width: 6.875rem //110px
           height: 2rem //32px
+          font-size: 0.875rem // 14px
+          line-height: 1.25rem //20px
+          letter-spacing: 0rem
 
       /* Types (only icon)*/
       &-only-icon
@@ -54,6 +70,7 @@
         &-extra-large
           width: 3rem //48px
           height: 3rem //48px
+          
 
         &-large
           width: 2.5rem //40px
