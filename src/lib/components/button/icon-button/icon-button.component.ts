@@ -26,7 +26,7 @@ export class McIconButtonComponent implements AfterViewInit {
   }
 
   private readonly ICON_BUTTON = 'mc-icon-button'
-  private readonly ICON_BUTTON_SHADOW = 'mc-icon-button-shadow';
+  private readonly ICON_BUTTON_SHADOW = 'mc-button-shadow';
   private theme: string = 'light';
 
   public getButtonCssClasses(): string {
