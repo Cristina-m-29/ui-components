@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { McUIIcon } from './icon.component.types';
+import { McIconSize, McIconType, McUIIcon } from './icon.component.types';
 
 const defaultIcon: McUIIcon = 'add-user';
 const defaultColor: string = '#28293D';
-const defaultSize: string = 'extra-large';
-const defaultType: string = 'stoke';
+const defaultSize: McIconSize = 'extra-large';
+const defaultType: McIconType = 'stoke';
 
 @Component({
   selector: 'mc-icon',
@@ -14,11 +14,11 @@ const defaultType: string = 'stoke';
 })
 export class McIconComponent implements AfterViewInit {
   @Input() icon?: McUIIcon = defaultIcon;
-  @Input() type?: string = defaultType;
+  @Input() type?: McIconType = defaultType;
 
   @Input() class?: string;
   @Input() color?: string = defaultColor;
-  @Input() size?: string = defaultSize;
+  @Input() size?: McIconSize = defaultSize;
 
   @Output() public focus: EventEmitter<FocusEvent> = new EventEmitter();
 
