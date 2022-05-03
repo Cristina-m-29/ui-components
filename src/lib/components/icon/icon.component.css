@@ -1,0 +1,23 @@
+.svg-wrapper-extra-large {
+  display: inline-block;
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.svg-wrapper-large {
+  display: inline-block;
+  width: 21px !important;
+  height: 21px !important;
+}
+
+.svg-wrapper-medium {
+  display: inline-block;
+  width: 19px !important;
+  height: 19px !important;
+}
+
+.svg-wrapper-small {
+  display: inline-block;
+  width: 17px !important;
+  height: 17px !important;
+}
