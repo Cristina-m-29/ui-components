@@ -3,11 +3,16 @@
   [ngClass]="getButtonCssClasses()"
   (focus)="handleOnFocusEvent($event)"
 >
+  <mc-icon
+    [icon]="icon"
+    [type]="iconType"
+    [color]="getColorForIcon()"
+    [size]="size"
+  ></mc-icon>
+
   <div
     *ngIf="showOverlay"
     class="mc-icon-button-overlay mc-icon-button-overlay-white"
     [ngClass]="getOverlayCssClasses()"
   ></div>
-
-  <img #mcIcon class="mc-icon" src="" alt="mc-icon">
 </button>

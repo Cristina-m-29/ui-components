@@ -7,14 +7,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ButtonComponent } from './preview-components/button/button.component';
 import { TextComponent } from './preview-components/text/text.component';
-import { SvgIconComponent } from './svg-icon/svg-icon.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
     TextComponent,
-    SvgIconComponent,
    ],
   imports: [
     HttpClientModule,

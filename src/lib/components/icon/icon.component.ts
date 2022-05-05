@@ -1,30 +1,68 @@
+import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { McUIIcon } from './icon.component.types';
+import { McIconSize, McIconType, McUIIcon } from './icon.component.types';
+
+const defaultIcon: McUIIcon = 'add-user';
+const defaultColor: string = '#28293D';
+const defaultSize: McIconSize = 'extra-large';
+const defaultType: McIconType = 'stoke';
 
 @Component({
   selector: 'mc-icon',
-  templateUrl: './icon.components.html',
-  styleUrls: ['./icon.component.sass']
+  template: `<span #svgWrapper (focus)="handleOnFocusEvent($event)"></span>`,
+  styleUrls: ['./icon.component.css']
 })
 export class McIconComponent implements AfterViewInit {
-  @Input() public icon: McUIIcon = 'down-circle';
+  @Input() icon?: McUIIcon = defaultIcon;
+  @Input() type?: McIconType = defaultType;
+
+  @Input() class?: string;
+  @Input() color?: string = defaultColor;
+  @Input() size?: McIconSize = defaultSize;
+
   @Output() public focus: EventEmitter<FocusEvent> = new EventEmitter();
 
-  @ViewChild('mcIcon')
-  public mcIcon!: ElementRef;
+  @ViewChild('svgWrapper')
+  public svg!: ElementRef<SVGTSpanElement>;
 
-  ngAfterViewInit(): void {
-    this.mcIcon.nativeElement.src = `lib/icons/${this.getThemeForIcon()}/${this.icon}.svg`;
+  constructor(private http: HttpClient) {}
+
+  public ngAfterViewInit(): void {
+    this.http.get(`http://localhost:4200/lib/icons/${this.type}/${this.icon}.svg`, {
+      responseType: 'text'
+    }).subscribe((svg: string) => {
+      if (this.class) {
+        svg = svg.replace(/<svg /g, `<svg class=${this.class} `);
+      }
+      if (this.color !== defaultColor) {
+        svg = svg.replace(/#28293D/g, `${this.color}`);
+      }
+      if (this.size !== defaultSize) {
+        const size = this.getSize(this.size || 'extra-large');
+        svg = svg.replace(/width="25" height="25"/g, `width="${size}" height="${size}"`)
+      }
+      
+      this.svg.nativeElement.classList.add(`svg-wrapper-${this.size}`)
+      this.svg.nativeElement.innerHTML = svg;
+    });
   }
-
-  private theme: string = 'light';
 
   public handleOnFocusEvent(event: FocusEvent): void {
     this.focus.emit(event);
   }
 
-  private getThemeForIcon(): string {
-    return this.theme === 'light' ? 'dark' : 'light';
+  private getSize(sizeAsString: string): number {
+    switch (sizeAsString) {
+      case 'extra-large':
+        return 25;
+      case 'large':
+        return 21;
+      case 'medium':
+        return 19;
+      case 'small':
+        return 17;
+      default:
+        return 25
+    }
   }
-
 }
