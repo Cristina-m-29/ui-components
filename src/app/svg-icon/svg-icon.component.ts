@@ -20,7 +20,7 @@ export class SvgIconComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
 
-    this.http.get("http://localhost:4200/lib/icons/flag.svg", {
+    this.http.get("lib/icons/flag.svg", {
       responseType: 'text'
     }).subscribe((svg: string) => {
       this.svg.nativeElement.innerHTML = svg.replace("<svg ", `<svg stroke=${this.stroke} `);
