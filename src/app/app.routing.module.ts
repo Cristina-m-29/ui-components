@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router'; // CLI imports router
+import { Routes, RouterModule } from '@angular/router';
 import { ButtonComponent } from './preview-components/button/button.component';
+import { IconComponent } from './preview-components/icon/icon.component';
 import { TextComponent } from './preview-components/text/text.component';
 
 const routes: Routes = [
@@ -13,12 +14,15 @@ const routes: Routes = [
     component: ButtonComponent
   },
   {
+    path: 'icon',
+    component: IconComponent
+  },
+  {
     path: '**',
     component: ButtonComponent
   }
 ];
 
-// configures NgModule imports and exports
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

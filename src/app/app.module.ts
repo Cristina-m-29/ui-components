@@ -6,6 +6,7 @@ import { McIconModule } from 'src/lib/public_api';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ButtonComponent } from './preview-components/button/button.component';
+import { IconComponent } from './preview-components/icon/icon.component';
 import { TextComponent } from './preview-components/text/text.component';
 
 @NgModule({
@@ -13,6 +14,7 @@ import { TextComponent } from './preview-components/text/text.component';
     AppComponent,
     ButtonComponent,
     TextComponent,
+    IconComponent,
    ],
   imports: [
     HttpClientModule,

@@ -1,6 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { McIconSize, McIconType, McUIIcon } from './icon.component.types';
+import { IMcIconType, IMcSvg, mcIcons, McIconSize, McIconType, McUIIcon } from './icon.component.types';
 
 const defaultIcon: McUIIcon = 'add-user';
 const defaultColor: string = '#28293D';
@@ -13,38 +12,35 @@ const defaultType: McIconType = 'stoke';
   styleUrls: ['./icon.component.css']
 })
 export class McIconComponent implements AfterViewInit {
-  @Input() icon?: McUIIcon = defaultIcon;
-  @Input() type?: McIconType = defaultType;
+  @Input() icon: McUIIcon = defaultIcon;
+  @Input() type: McIconType = defaultType;
 
   @Input() class?: string;
-  @Input() color?: string = defaultColor;
-  @Input() size?: McIconSize = defaultSize;
+  @Input() color: string = defaultColor;
+  @Input() size: McIconSize = defaultSize;
 
   @Output() public focus: EventEmitter<FocusEvent> = new EventEmitter();
 
   @ViewChild('svgWrapper')
   public svg!: ElementRef<SVGTSpanElement>;
 
-  constructor(private http: HttpClient) {}
+  ngAfterViewInit(): void {
+    const typeIconsList = mcIcons.find((icon: IMcIconType) => icon.type === this.type) || mcIcons[0];
+    let svg = typeIconsList.icons.find((svg: IMcSvg) => svg.icon === this.icon)?.svg || typeIconsList.icons[0].svg;
 
-  public ngAfterViewInit(): void {
-    this.http.get(`http://localhost:4200/lib/icons/${this.type}/${this.icon}.svg`, {
-      responseType: 'text'
-    }).subscribe((svg: string) => {
-      if (this.class) {
-        svg = svg.replace(/<svg /g, `<svg class=${this.class} `);
-      }
-      if (this.color !== defaultColor) {
-        svg = svg.replace(/#28293D/g, `${this.color}`);
-      }
-      if (this.size !== defaultSize) {
-        const size = this.getSize(this.size || 'extra-large');
-        svg = svg.replace(/width="25" height="25"/g, `width="${size}" height="${size}"`)
-      }
-      
-      this.svg.nativeElement.classList.add(`svg-wrapper-${this.size}`)
-      this.svg.nativeElement.innerHTML = svg;
-    });
+    if (this.class) {
+      svg = svg.replace(/<svg /g, `<svg class=${this.class} `);
+    }
+    if (this.color !== defaultColor) {
+      svg = svg.replace(/#28293D/g, `${this.color}`);
+    }
+    if (this.size !== defaultSize) {
+      const size = this.getSize(this.size || 'extra-large');
+      svg = svg.replace(/width="25" height="25"/g, `width="${size}" height="${size}"`)
+    }
+
+    this.svg.nativeElement.classList.add(`svg-wrapper-${this.size}`)
+    this.svg.nativeElement.innerHTML = svg;
   }
 
   public handleOnFocusEvent(event: FocusEvent): void {

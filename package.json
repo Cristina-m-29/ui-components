@@ -1,6 +1,6 @@
 {
   "name": "mc-ui-components",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
