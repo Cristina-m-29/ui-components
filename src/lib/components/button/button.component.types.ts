@@ -13,3 +13,11 @@ export enum McButtonSizeEnum {
   MEDIUM = 'medium',
   SMALL = 'small',
 }
+
+export declare type McButtonColor = 'basic' | 'danger' | 'warning' | 'success';
+export enum McButtonColorEnum {
+  BASIC = 'basic',
+  DANGER = 'danger',
+  WARNING = 'warning',
+  SUCCESS = 'success'
+}

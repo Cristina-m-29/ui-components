@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { McButtonSize, McButtonType, McButtonTypeEnum } from './button.component.types';
+import { McButtonColor, McButtonSize, McButtonType, McButtonTypeEnum } from './button.component.types';
 
 @Component({
   selector: 'mc-button',
@@ -10,9 +10,10 @@ import { McButtonSize, McButtonType, McButtonTypeEnum } from './button.component
   ]
 })
 export class McButtonComponent {
+  @Input() public color: McButtonColor = 'basic';
   @Input() public type: McButtonType = 'primary';
   @Input() public size: McButtonSize = 'medium';
-  @Input() public showOverlay: boolean = true;
+  @Input() public showOverlay: boolean = false;
 
   @Output() public focus: EventEmitter<FocusEvent> = new EventEmitter();
 

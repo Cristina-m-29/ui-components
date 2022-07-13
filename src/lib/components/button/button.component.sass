@@ -13,12 +13,12 @@
     justify-content: center
     align-items: center
     border: none
-    border-radius: 0.5rem //8px
+    border-radius: 0.375rem //4px
     cursor: pointer
 
     /* Theme */
     &-light
-      /* Background type */
+      /* Styles */
       &-primary
         background-color: colors.$mc-primary-main
         color: colors.$mc-light-4
@@ -29,40 +29,56 @@
         &:focus
           background-color: colors.$mc-primary-dark
 
+        // &-danger  
+        //   background-color: colors.$mc-red-1
+        //   color: colors.$mc-light-4
+
+        //   &:hover
+        //     background-color: colors.$mc-red-2
+  
+        //   &:focus
+        //     background-color: colors.$mc-red-0
+
       &-secondary
-        background-color: colors.$mc-light-3
-        color: colors.$mc-primary-main
+        background-color: colors.$mc-light-4
+        color: colors.$mc-dark
+
+        // &-danger
+        //   color: colors.$mc-red-1
 
         &:hover
-          background-color: colors.$mc-light-4
-          color: colors.$mc-primary-light
+          background-color: colors.$mc-light-2
 
         &:focus
           background-color: colors.$mc-light-1
-          color: colors.$mc-primary-dark
 
       &-tertinary
         background-color: transparent
-        color: colors.$mc-primary-main
+        color: colors.$mc-dark
+
+        // &-danger  
+        //   color: colors.$mc-red-1
 
         &:hover
-          color: colors.$mc-primary-light
+          background-color: colors.$mc-light-2
 
         &:focus
-          color: colors.$mc-primary-dark
+          background-color: colors.$mc-light-1
 
       &-outline
-        border: 1.5px solid colors.$mc-primary-main
-        background-color: colors.$mc-light-4
-        color: colors.$mc-primary-main
+        // border: 1px solid colors.$mc-light-0
+        border: 1px solid colors.$mc-primary-main
+        background-color: transparent
+        color: colors.$mc-dark
+
+        // &-danger
+        //   color: colors.$mc-dark
 
         &:hover
-          border: 1.5px solid colors.$mc-primary-light
-          color: colors.$mc-primary-light
+          background-color: colors.$mc-light-2
 
         &:focus
-          border: 1.5px solid colors.$mc-primary-dark
-          color: colors.$mc-primary-dark
+          background-color: colors.$mc-light-1
 
       /* Sizes */
       &-extra-large
