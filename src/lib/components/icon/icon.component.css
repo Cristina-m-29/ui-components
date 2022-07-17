@@ -1,23 +1,37 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .svg-wrapper-extra-large {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 25px !important;
   height: 25px !important;
 }
 
 .svg-wrapper-large {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 21px !important;
   height: 21px !important;
 }
 
 .svg-wrapper-medium {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 19px !important;
   height: 19px !important;
 }
 
 .svg-wrapper-small {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 17px !important;
   height: 17px !important;
 }

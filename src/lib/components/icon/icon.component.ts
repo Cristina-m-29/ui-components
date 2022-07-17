@@ -18,6 +18,7 @@ export class McIconComponent implements AfterViewInit {
   @Input() class?: string;
   @Input() color: string = defaultColor;
   @Input() size: McIconSize = defaultSize;
+  @Input() sizeInPixels?: number;
 
   @Output() public focus: EventEmitter<FocusEvent> = new EventEmitter();
 
@@ -35,7 +36,7 @@ export class McIconComponent implements AfterViewInit {
       svg = svg.replace(/#28293D/g, `${this.color}`);
     }
     if (this.size !== defaultSize) {
-      const size = this.getSize(this.size || 'extra-large');
+      const size = this.getSize();
       svg = svg.replace(/width="25" height="25"/g, `width="${size}" height="${size}"`)
     }
 
@@ -47,18 +48,23 @@ export class McIconComponent implements AfterViewInit {
     this.focus.emit(event);
   }
 
-  private getSize(sizeAsString: string): number {
-    switch (sizeAsString) {
-      case 'extra-large':
-        return 25;
-      case 'large':
-        return 21;
-      case 'medium':
-        return 19;
-      case 'small':
-        return 17;
-      default:
-        return 25
+  private getSize(): number {
+    if (this.sizeInPixels) {
+      return this.sizeInPixels;
+    } 
+    else {
+      switch (this.size) {
+        case 'extra-large':
+          return 25;
+        case 'large':
+          return 21;
+        case 'medium':
+          return 19;
+        case 'small':
+          return 17;
+        default:
+          return 25;
+      }
     }
   }
 }

@@ -4,6 +4,8 @@ export declare type McIconType = "stoke" | "broken" | "filled";
 
 export declare type McIconSize = "extra-large" | "large" | "medium" | "small";
 
+export declare type McIconPosition = 'left' | 'right';
+
 export interface IMcIconType {
   type: McIconType;
   icons: IMcSvg[];

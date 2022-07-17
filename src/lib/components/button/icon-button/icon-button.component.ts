@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { McIconType, McUIIcon } from '../../icon/icon.component.types';
-import { McButtonSize, McButtonType, McButtonTypeEnum } from '../button.component.types';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { McIconSize, McIconType, McUIIcon } from '../../icon/icon.component.types';
+import { McButtonUtils } from '../button-utils.component';
+import { McButtonColor, McButtonSize, McButtonType } from '../button.component.types';
 
 @Component({
   selector: 'mc-icon-button',
@@ -10,40 +11,33 @@ import { McButtonSize, McButtonType, McButtonTypeEnum } from '../button.componen
     '../../../styles/_shadows.sass'
   ]
 })
-export class McIconButtonComponent {
+export class McIconButtonComponent implements OnChanges{
   @Input() public icon: McUIIcon = 'down-circle';
+  @Input() public color: McButtonColor = 'default';
   @Input() public type: McButtonType = 'primary';
   @Input() public iconType: McIconType = 'stoke';
   @Input() public size: McButtonSize = 'medium';
-  @Input() public showOverlay: boolean = true;
+  @Input() public loading = false;
+  @Input() public disabled = false;
+  @Input() public showOverlay: boolean = false;
 
   @Output() public focus: EventEmitter<FocusEvent> = new EventEmitter();
 
-  private readonly ICON_BUTTON = 'mc-icon-button'
-  private readonly ICON_BUTTON_SHADOW = 'mc-button-shadow';
-  private theme: string = 'light';
+  constructor(private cdr: ChangeDetectorRef, private buttonUtils: McButtonUtils) {}
 
-  public getButtonCssClasses(): string {
-    const typeCssClass = `${this.ICON_BUTTON}-${this.theme}-${this.type}`;
-    const sizeCssClass = `${this.ICON_BUTTON}-${this.theme}-${this.size}`;
-    const shadowCssClass = this.type !== McButtonTypeEnum.TERTINARY ? this.ICON_BUTTON_SHADOW : '';
-    return `${typeCssClass} ${sizeCssClass} ${shadowCssClass}`;
-  }
-
-  public getOverlayCssClasses(): string {
-    return `${this.ICON_BUTTON}-${this.theme}-${this.size}`
+  public ngOnChanges(): void {
+    this.cdr.detectChanges();
   }
 
   public handleOnFocusEvent(event: FocusEvent): void {
     this.focus.emit(event);
   }
 
-  public getColorForIcon(): string {
-    switch (this.type) {
-      case 'primary':
-        return '#FFFFFF';
-      default:
-        return '#28293D'
-    }
+  get iconSize(): McIconSize {
+    return this.buttonUtils.getIconSize(this.size);
+  }
+
+  get getColorForIcon(): string {
+    return this.buttonUtils.getColorForIcon(this.disabled, this.color, this.type);
   }
 }

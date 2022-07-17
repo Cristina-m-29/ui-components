@@ -1,15 +1,83 @@
 <button
   class="mc-button"
-  [ngClass]="getButtonCssClasses()"
+  [disabled]="disabled || loadingDisabled"
+  [ngClass]="buttonCssClasses"
   (focus)="handleOnFocusEvent($event)"
 >
   <div
     *ngIf="showOverlay"
     class="mc-button-overlay mc-button-overlay-white"
-    [ngClass]="getOverlayCssClasses()"
+    [ngClass]="overlayCssClasses"
+    (click)="handleEvent($event)"
+    (dblclick)="handleEvent($event)"
+    (mousedown)="handleEvent($event)"
+    (mousemove)="handleEvent($event)"
+    (mouseout)="handleEvent($event)"
+    (mouseover)="handleEvent($event)"
+    (mouseup)="handleEvent($event)"
+    (mouseleave)="handleEvent($event)"
+    (mouseenter)="handleEvent($event)"
+    (contextmenu)="handleEvent($event)"
+    (wheel)="handleEvent($event)"
   ></div>
 
-  <span>
-    <ng-content></ng-content>
-  </span>
+  <ng-container *ngIf="!loading; else isLoading">
+    <span
+      class="mc-button-content"
+      (click)="handleEvent($event)"
+      (dblclick)="handleEvent($event)"
+      (mousedown)="handleEvent($event)"
+      (mousemove)="handleEvent($event)"
+      (mouseout)="handleEvent($event)"
+      (mouseover)="handleEvent($event)"
+      (mouseup)="handleEvent($event)"
+      (mouseleave)="handleEvent($event)"
+      (mouseenter)="handleEvent($event)"
+      (contextmenu)="handleEvent($event)"
+      (wheel)="handleEvent($event)"
+    >
+      <ng-container *ngIf="icon && iconPosition === 'left'">
+        <mc-icon
+          [icon]="icon"
+          [type]="iconType"
+          [color]="getColorForIcon"
+          [size]="iconSize"
+          [sizeInPixels]="iconSizeInPixels"
+        ></mc-icon>
+      </ng-container>
+
+      <ng-content></ng-content>
+
+      <ng-container *ngIf="icon && iconPosition === 'right'">
+          <mc-icon
+            [icon]="icon"
+            [type]="iconType"
+            [color]="getColorForIcon"
+            [size]="iconSize"
+            [sizeInPixels]="iconSizeInPixels"
+          ></mc-icon>
+      </ng-container>
+    </span>
+  </ng-container>
+
+  <ng-template #isLoading>
+    <div 
+      [ngClass]="loaderCssClasses" 
+      (click)="handleEvent($event)"
+      (dblclick)="handleEvent($event)"
+      (mousedown)="handleEvent($event)"
+      (mousemove)="handleEvent($event)"
+      (mouseout)="handleEvent($event)"
+      (mouseover)="handleEvent($event)"
+      (mouseup)="handleEvent($event)"
+      (mouseleave)="handleEvent($event)"
+      (mouseenter)="handleEvent($event)"
+      (contextmenu)="handleEvent($event)"
+      (wheel)="handleEvent($event)"
+    >
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </ng-template>
 </button>

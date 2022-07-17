@@ -1,309 +1,522 @@
 <h3>Buttons</h3>
 
 <div class="flex">
-  <h4>Sizes</h4>
+  <section>
+    <h4>Without icon</h4>
+    <div class="flex">
+      <section>
+        <h5></h5>
+        <br>
+        <h5>Disabled</h5>
+        <br>
+        <h5>Loading</h5>
+        <br>
+        <h5>Primary</h5>
+        <br>
+        <h5>Secondary</h5>
+        <br>
+        <h5>Outline</h5>
+        <br>
+        <h5>Tertinary</h5>
+        <br>
+      </section>
 
-  <mc-button size="extra-large">Extra large</mc-button>
-  <mc-button size="large">Large</mc-button>
-  <mc-button size="medium">Medium</mc-button>
-  <mc-button size="small">Small</mc-button>
-</div> 
+      <section>
+        <h5>Basic</h5>
 
-<br>
+        <mc-button [disabled]="true" color="basic">Test</mc-button>
+        <br>
+        <mc-button [loading]="true" color="basic">Test</mc-button>
+        <br>
+        <mc-button type="primary" color="basic">Test</mc-button>
+        <br>
+        <mc-button type="secondary" color="basic">Test</mc-button>
+        <br>
+        <mc-button type="outline" color="basic">Test</mc-button>
+        <br>
+        <mc-button type="tertinary" color="basic">Test</mc-button>
+        <br>
+      </section>
 
+      <section>
+        <h5>Default</h5>
+
+        <mc-button [disabled]="true">Test</mc-button>
+        <br>
+        <mc-button [loading]="true">Test</mc-button>
+        <br>
+        <mc-button type="primary">Test</mc-button>
+        <br>
+        <mc-button type="secondary">Test</mc-button>
+        <br>
+        <mc-button type="outline">Test</mc-button>
+        <br>
+        <mc-button type="tertinary">Test</mc-button>
+        <br>
+      </section>
+
+      <section>
+        <h5>Danger</h5>
+
+        <mc-button [disabled]="true" color="danger">Test</mc-button>
+        <br>
+        <mc-button [loading]="true" color="danger">Test</mc-button>
+        <br>
+        <mc-button type="primary" color="danger">Test</mc-button>
+        <br>
+        <mc-button type="secondary" color="danger">Test</mc-button>
+        <br>
+        <mc-button type="outline" color="danger">Test</mc-button>
+        <br>
+        <mc-button type="tertinary" color="danger">Test</mc-button>
+        <br>
+      </section>
+
+      <section>
+        <h5>Warning</h5>
+
+        <mc-button [disabled]="true" color="warning">Test</mc-button>
+        <br>
+        <mc-button [loading]="true" color="warning">Test</mc-button>
+        <br>
+        <mc-button type="primary" color="warning">Test</mc-button>
+        <br>
+        <mc-button type="secondary" color="warning">Test</mc-button>
+        <br>
+        <mc-button type="outline" color="warning">Test</mc-button>
+        <br>
+        <mc-button type="tertinary" color="warning">Test</mc-button>
+        <br>
+      </section>
+
+      <section>
+        <h5>Success</h5>
+
+        <mc-button [disabled]="true" color="success">Test</mc-button>
+        <br>
+        <mc-button [loading]="true" color="success">Test</mc-button>
+        <br>
+        <mc-button type="primary" color="success">Test</mc-button>
+        <br>
+        <mc-button type="secondary" color="success">Test</mc-button>
+        <br>
+        <mc-button type="outline" color="success">Test</mc-button>
+        <br>
+        <mc-button type="tertinary" color="success">Test</mc-button>
+        <br>
+      </section>
+    </div>
+  </section>
+
+  <section>
+    <h4>With icon</h4>
+    <div class="flex">
+      <section>
+        <h5></h5>
+        <br>
+        <h5>Disabled</h5>
+        <br>
+        <h5>Loading</h5>
+        <br>
+        <h5>Primary</h5>
+        <br>
+        <h5>Secondary</h5>
+        <br>
+        <h5>Outline</h5>
+        <br>
+        <h5>Tertinary</h5>
+        <br>
+      </section>
+
+      <section>
+        <h5>Basic</h5>
+        
+        <mc-button [disabled]="true" icon="search" color="basic">Test</mc-button>
+        <br>
+        <mc-button [loading]="true" icon="search" color="basic">Test</mc-button>
+        <br>
+        <mc-button type="primary" icon="search" color="basic">Test</mc-button>
+        <br>
+        <mc-button type="secondary" icon="search" color="basic">Test</mc-button>
+        <br>
+        <mc-button type="outline" icon="search" color="basic">Test</mc-button>
+        <br>
+        <mc-button type="tertinary" icon="search" color="basic">Test</mc-button>
+        <br>
+      </section>
+
+      <section>
+        <h5>Default</h5>
+        
+        <mc-button [disabled]="true" icon="search">Test</mc-button>
+        <br>
+        <mc-button [loading]="true" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="primary" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="secondary" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="outline" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="tertinary" icon="search">Test</mc-button>
+        <br>
+      </section>
+
+      <section>
+        <h5>Danger</h5>
+        
+        <mc-button [disabled]="true" color="danger" icon="search">Test</mc-button>
+        <br>
+        <mc-button [loading]="true" color="danger" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="primary" color="danger" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="secondary" color="danger" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="outline" color="danger" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="tertinary" color="danger" icon="search">Test</mc-button>
+        <br>
+      </section>
+
+      <section>
+        <h5>Warning</h5>
+        
+        <mc-button [disabled]="true" color="warning" icon="search">Test</mc-button>
+        <br>
+        <mc-button [loading]="true" color="warning" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="primary" color="warning" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="secondary" color="warning" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="outline" color="warning" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="tertinary" color="warning" icon="search">Test</mc-button>
+        <br>
+      </section>
+
+      <section>
+        <h5>Success</h5>
+        
+        <mc-button [disabled]="true" color="success" icon="search">Test</mc-button>
+        <br>
+        <mc-button [loading]="true" color="success" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="primary" color="success" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="secondary" color="success" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="outline" color="success" icon="search">Test</mc-button>
+        <br>
+        <mc-button type="tertinary" color="success" icon="search">Test</mc-button>
+        <br>
+      </section>
+    </div>
+  </section>
+</div>
+
+<h3>Icon buttons</h3>
 <div class="flex">
-  <h4>Types</h4>
 
-  <mc-button type="primary">Primary</mc-button>
-  <mc-button type="secondary">Secondary</mc-button>
-  <mc-button type="outline">Outline</mc-button>
-  <mc-button type="tertinary">Tertinary</mc-button>
+  <section>
+    <h5></h5>
+    <br>
+    <h5>Disabled</h5>
+    <br>
+    <h5>Loading</h5>
+    <br>
+    <h5>Primary</h5>
+    <br>
+    <h5>Secondary</h5>
+    <br>
+    <h5>Outline</h5>
+    <br>
+    <h5>Tertinary</h5>
+    <br>
+  </section>
+
+  <section>
+    <h5>Basic</h5>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+      [disabled]="true"
+      color="basic"
+    ></mc-icon-button>
+
+    <br>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+      [loading]="true"
+      color="basic"
+    ></mc-icon-button>
+
+    <br>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+      color="basic"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="secondary"
+      size="medium-square"
+      color="basic"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="outline"
+      color="basic"
+      size="medium-square"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="tertinary"
+      size="medium-square"
+      color="basic"
+    ></mc-icon-button>
+  </section>
+
+  <section>
+    <h5>Default</h5>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+      [disabled]="true"
+    ></mc-icon-button>
+
+    <br>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+      [loading]="true"
+    ></mc-icon-button>
+
+    <br>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="secondary"
+      size="medium-square"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="outline"
+      size="medium-square"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="tertinary"
+      size="medium-square"
+    ></mc-icon-button>
+  </section>
+
+  <section>
+    <h5>Danger</h5>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+      color="danger"
+      [disabled]="true"
+    ></mc-icon-button>
+
+    <br>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+      color="danger"
+      [loading]="true"
+    ></mc-icon-button>
+
+    <br>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+      color="danger"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="secondary"
+      size="medium-square"
+      color="danger"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="outline"
+      size="medium-square"
+      color="danger"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="tertinary"
+      size="medium-square"
+      color="danger"
+    ></mc-icon-button>
+  </section>
+
+  <section>
+    <h5>Warning</h5>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+      color="warning"
+      [disabled]="true"
+    ></mc-icon-button>
+
+    <br>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+      color="warning"
+      [loading]="true"
+    ></mc-icon-button>
+
+    <br>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+      color="warning"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="secondary"
+      size="medium-square"
+      color="warning"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="outline"
+      size="medium-square"
+      color="warning"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="tertinary"
+      size="medium-square"
+      color="warning"
+    ></mc-icon-button>
+  </section>
+
+  <section>
+    <h5>Success</h5>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+      color="success"
+      [disabled]="true"
+    ></mc-icon-button>
+
+    <br>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+      color="success"
+      [loading]="true"
+    ></mc-icon-button>
+
+    <br>
+
+    <mc-icon-button
+      icon="settings"
+      type="primary"
+      size="medium-square"
+      color="success"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="secondary"
+      size="medium-square"
+      color="success"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="outline"
+      size="medium-square"
+      color="success"
+    ></mc-icon-button>
+
+    <br>
+    
+    <mc-icon-button
+      icon="settings"
+      type="tertinary"
+      size="medium-square"
+      color="success"
+    ></mc-icon-button>
+  </section>
 </div> 
-
-<br>
-
-<div class="flex">
-  <div class="flex flex-column">
-    <h4></h4>
-  
-    <h4>Primary</h4>
-    <h4>Secondary</h4>
-    <h4>Outline</h4>
-    <h4>Tertinary</h4>
-  </div>
-
-  <div class="flex flex-column">
-    <h4>Basic</h4>
-
-    <mc-button type="primary">Button</mc-button>
-    <br>
-    <mc-button type="secondary">Button</mc-button>
-    <br>
-    <mc-button type="outline">Button</mc-button>
-    <br>
-    <mc-button type="tertinary">Button</mc-button>
-  </div>
-
-  <div class="flex flex-column">
-    <h4>Danger</h4>
-
-    <mc-button type="primary" color="danger">Button</mc-button>
-    <br>
-    <mc-button type="secondary" color="danger">Button</mc-button>
-    <br>
-    <mc-button type="outline" color="danger">Button</mc-button>
-    <br>
-    <mc-button type="tertinary" color="danger">Button</mc-button>
-  </div>
-
-  <div class="flex flex-column">
-    <h4>Warning</h4>
-
-    <mc-button type="primary">Button</mc-button>
-    <br>
-    <mc-button type="secondary">Button</mc-button>
-    <br>
-    <mc-button type="outline">Button</mc-button>
-    <br>
-    <mc-button type="tertinary">Button</mc-button>
-  </div>
-
-  <div class="flex flex-column">
-    <h4>Success</h4>
-
-    <mc-button type="primary">Button</mc-button>
-    <br>
-    <mc-button type="secondary">Button</mc-button>
-    <br>
-    <mc-button type="outline">Button</mc-button>
-    <br>
-    <mc-button type="tertinary">Button</mc-button>
-  </div>
-</div> 
-
-<!-- <div class="row">
-  <h4>Types</h4>
-
-  <div>
-    <h4>Basic</h4>
-    <h4>Primary</h4>
-    <h4>Secondary</h4>
-  </div>
-</div>
-
-<div class="row">
-  <h4>Primary</h4>
-
-  <div>
-    <mc-button
-      type="primary"
-      size="extra-large"
-    >Primary</mc-button>
-
-    <mc-button
-      type="primary"
-      size="large"
-    >Primary</mc-button>
-
-    <mc-button
-      type="primary"
-      size="medium"
-    >Primary</mc-button>
-
-    <mc-button
-      type="primary"
-      size="small"
-    >Primary</mc-button>
-  </div>
-
-  <h4>Primary only icon</h4>
-
-  <div>
-    <mc-icon-button
-      icon="settings"
-      type="primary"
-      size="extra-large"
-    ></mc-icon-button>
-
-    <mc-icon-button
-      icon="settings"
-      type="primary"
-      size="large"
-    ></mc-icon-button>
-
-    <mc-icon-button
-      icon="settings"
-      type="primary"
-      size="medium"
-    ></mc-icon-button>
-
-    <mc-icon-button
-      icon="settings"
-      type="primary"
-      size="small"
-    ></mc-icon-button>
-
-  </div>
-</div>
-
-<div class="row">
-  <h4>Secondary</h4>
-
-  <div>
-    <mc-button
-      type="secondary"
-      size="extra-large"
-    >Secondary</mc-button>
-
-    <mc-button
-      type="secondary"
-      size="large"
-    >Secondary</mc-button>
-
-    <mc-button
-      type="secondary"
-      size="medium"
-    >Secondary</mc-button>
-
-    <mc-button
-      type="secondary"
-      size="small"
-    >Secondary</mc-button>
-  </div>
-
-  <h4>Secondary only icon</h4>
-
-  <div>
-    <mc-icon-button
-      icon="settings"
-      type="secondary"
-      size="extra-large"
-    ></mc-icon-button>
-
-    <mc-icon-button
-      icon="settings"
-      type="secondary"
-      size="large"
-    ></mc-icon-button>
-
-    <mc-icon-button
-      icon="settings"
-      type="secondary"
-      size="medium"
-    ></mc-icon-button>
-
-    <mc-icon-button
-      icon="settings"
-      type="secondary"
-      size="small"
-    ></mc-icon-button>
-  </div>
-</div>
-
-<div class="row">
-  <h4>Outline</h4>
-
-  <div>
-    <mc-button
-      type="outline"
-      size="extra-large"
-    >Outline</mc-button>
-
-    <mc-button
-      type="outline"
-      size="large"
-    >Outline</mc-button>
-
-    <mc-button
-      type="outline"
-      size="medium"
-    >Outline</mc-button>
-
-    <mc-button
-      type="outline"
-      size="small"
-    >Outline</mc-button>
-  </div>
-
-  <h4>Outline icon only</h4>
-
-  <div>
-    <mc-icon-button
-      icon="settings"
-      type="outline"
-      size="extra-large"
-    ></mc-icon-button>
-
-    <mc-icon-button
-      icon="settings"
-      type="outline"
-      size="large"
-    ></mc-icon-button>
-
-    <mc-icon-button
-      icon="settings"
-      type="outline"
-      size="medium"
-    ></mc-icon-button>
-
-    <mc-icon-button
-      icon="settings"
-      type="outline"
-      size="small"
-    ></mc-icon-button>
-  </div>
-</div>
-
-<div class="row">
-  <h4>Tertinary</h4>
-
-  <div>
-    <mc-button
-      type="tertinary"
-      size="extra-large"
-    >Tertinary</mc-button>
-
-    <mc-button
-      type="tertinary"
-      size="large"
-    >Tertinary</mc-button>
-
-    <mc-button
-      type="tertinary"
-      size="medium"
-    >Tertinary</mc-button>
-
-    <mc-button
-      type="tertinary"
-      size="small"
-    >Tertinary</mc-button>
-  </div>
-
-  <h4>Tertinary only icon</h4>
-
-  <div>
-    <mc-icon-button
-      icon="settings"
-      type="tertinary"
-      size="extra-large"
-    ></mc-icon-button>
-
-    <mc-icon-button
-      icon="settings"
-      type="tertinary"
-      size="large"
-    ></mc-icon-button>
-
-    <mc-icon-button
-      icon="settings"
-      type="tertinary"
-      size="medium"
-    ></mc-icon-button>
-
-    <mc-icon-button
-      icon="settings"
-      type="tertinary"
-      size="small"
-    ></mc-icon-button>
-  </div>
-</div> -->
