@@ -24,6 +24,10 @@
   <ng-container *ngIf="!loading; else isLoading">
     <span
       class="mc-button-content"
+      [ngClass]="{
+        'mc-button-content-icon-left': iconPosition === 'left', 
+        'mc-button-content-icon-right': iconPosition === 'right'
+      }"
       (click)="handleEvent($event)"
       (dblclick)="handleEvent($event)"
       (mousedown)="handleEvent($event)"

@@ -57,7 +57,7 @@ export class McButtonComponent implements OnChanges {
       ${ (this.disabled || this.loadingDisabled) ? '' : `${themeColor}-${this.type}-effects` }
     `;
     
-    const sizeCssClass = `${theme}-${this.size}`;
+    const sizeCssClass = `${theme}-${this.buttonUtils.getIconSize(this.size)} ${theme}-${this.size}`;
 
     const shadowCssClass = this.type !== McButtonTypeEnum.TERTINARY ? this.BUTTON_SHADOW : '';
 

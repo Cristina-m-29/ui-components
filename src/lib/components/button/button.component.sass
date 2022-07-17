@@ -23,8 +23,13 @@
     &-content
       display: flex
       
-      mc-icon
-        margin-right: 0.25rem
+      &-icon-left
+        mc-icon
+          margin-right: 0.25rem
+
+      &-icon-right
+        mc-icon
+          margin-left: 0.25rem
 
     /* Theme */
     &-light
@@ -83,7 +88,7 @@
           background-color: colors.$mc-light-4
 
         &-outline
-          border: 1.5px solid colors.$mc-dark-2
+          border: 1.5px solid colors.$mc-light-1
 
       &-danger
         background-color: transparent
@@ -187,7 +192,7 @@
           color: colors.$mc-dark-3
           cursor: default
 
-        &-basic-tertinary, &-default-tertinay, &-danger-tertinary, &-warning-tertinary, &-success-tertinary
+        &-basic-tertinary, &-default-tertinary, &-danger-tertinary, &-warning-tertinary, &-success-tertinary
           background-color: transparent
           color: colors.$mc-dark-3
           cursor: default
@@ -203,12 +208,15 @@
         line-height: 1.75rem //28px
         letter-spacing: 0rem
 
-      &-extra-large-square
-        width: 3rem //48px
-        height: 3rem //48px
-        font-size: 1.125rem // 18px
-        line-height: 1.75rem //28px
-        letter-spacing: 0rem
+        &-round
+          border-radius: 3.125rem // 50px
+
+        &-square
+          width: 3rem //48px
+
+        &-square-round
+          width: 3rem //48px
+          border-radius: 3.125rem // 50px
 
       &-large
         width: 8.438rem //135px
@@ -217,12 +225,15 @@
         line-height: 1.5rem //24px
         letter-spacing: 0rem
 
-      &-large-square
-        width: 2.5rem //40px
-        height: 2.5rem //40px
-        font-size: 1rem // 16px
-        line-height: 1.5rem //24px
-        letter-spacing: 0rem
+        &-round
+          border-radius: 3.125rem // 50px
+
+        &-square
+          width: 2.5rem //40px
+
+        &-square-round
+          width: 2.5rem //40px
+          border-radius: 3.125rem // 50px
 
       &-medium
         width: 7.813rem //125 px
@@ -231,12 +242,15 @@
         line-height: 1.25rem //20px
         letter-spacing: 0rem
 
-      &-medium-square
-        width: 2.25rem //36px
-        height: 2.25rem //36px
-        font-size: 0.875rem // 14px
-        line-height: 1.25rem //20px
-        letter-spacing: 0rem
+        &-round
+          border-radius: 3.125rem // 50px
+          
+        &-square
+          width: 2.25rem //36px
+          
+        &-square-round
+          width: 2.25rem //36px
+          border-radius: 3.125rem // 50px
 
       &-small
         width: 6.875rem //110px
@@ -245,12 +259,15 @@
         line-height: 1.25rem //20px
         letter-spacing: 0rem
 
-      &-small-square
-        width: 2rem //32px
-        height: 2rem //32px
-        font-size: 0.875rem // 14px
-        line-height: 1.25rem //20px
-        letter-spacing: 0rem
+        &-round
+          border-radius: 3.125rem // 50px
+
+        &-square
+          width: 2rem //32px
+
+        &-square-round
+          width: 2rem //32px
+          border-radius: 3.125rem // 50px
 
     /* Overlay */
     &-overlay
@@ -286,6 +303,9 @@
         animation-delay: 0
 
     &-basic-secondary div, &-basic-outline div, &-basic-tertinary div
+      background: colors.$mc-primary-main
+
+    &-default-secondary div, &-default-outline div, &-default-tertinary div
       background: colors.$mc-primary-main
 
     &-danger-secondary div, &-danger-outline div, &-danger-tertinary div

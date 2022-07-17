@@ -8,12 +8,20 @@ export enum McButtonTypeEnum {
 
 export declare type McButtonSize = 
   'extra-large' | 
+  'extra-large-round' | 
   'extra-large-square' | 
+  'extra-large-square-round' | 
   'large'|
+  'large-round' | 
   'large-square' | 
+  'large-square-round' | 
   'medium' |
+  'medium-round' | 
   'medium-square' | 
+  'medium-square-round' | 
   'small' |
-  'small-square';
+  'small-round' |
+  'small-square' |
+  'small-square-round';
 
 export declare type McButtonColor = 'basic' | 'default' | 'danger' | 'warning' | 'success';
