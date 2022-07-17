@@ -3,7 +3,7 @@ import { IMcIconType, IMcSvg, mcIcons, McIconSize, McIconType, McUIIcon } from '
 
 const defaultIcon: McUIIcon = 'add-user';
 const defaultColor: string = '#28293D';
-const defaultSize: McIconSize = 'extra-large';
+const defaultSize: McIconSize = 'medium';
 const defaultType: McIconType = 'stoke';
 
 @Component({
@@ -54,8 +54,6 @@ export class McIconComponent implements AfterViewInit {
     } 
     else {
       switch (this.size) {
-        case 'extra-large':
-          return 25;
         case 'large':
           return 21;
         case 'medium':

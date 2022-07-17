@@ -1,4 +1,3 @@
-@use '../../styles/_typography' as typography
 @use '../../styles/_colors' as colors
 
 :host
@@ -9,9 +8,6 @@
   border-radius: 0.375rem //4px
 
   .mc-button
-    font-family: typography.$inter
-    font-style: typography.$inter-style
-    font-weight: typography.$inter-medium
     position: relative
     display: flex
     justify-content: center
@@ -36,7 +32,6 @@
       /* Normal, Hover, Focus states*/
       &-default
         background-color: transparent
-        color: colors.$mc-primary-main
 
         &-effects
           &:hover
@@ -47,7 +42,6 @@
 
         &-primary
           background-color: colors.$mc-primary-main
-          color: colors.$mc-light-4
 
           &-effects
             &:hover
@@ -64,7 +58,6 @@
 
       &-basic
         background-color: transparent
-        color: colors.$mc-dark-0
 
         &-effects
           &:hover
@@ -75,7 +68,6 @@
 
         &-primary
           background-color: colors.$mc-primary-main
-          color: colors.$mc-light-4
 
           &-effects
             &:hover
@@ -92,7 +84,6 @@
 
       &-danger
         background-color: transparent
-        color: colors.$mc-red-1
 
         &-effects
           &:hover
@@ -103,7 +94,6 @@
 
         &-primary
           background-color: colors.$mc-red-1
-          color: colors.$mc-light-4
 
           &-effects
             &:hover
@@ -120,7 +110,6 @@
 
       &-warning
         background-color: transparent
-        color: colors.$mc-orange-1
 
         &-effects
           &:hover
@@ -131,7 +120,6 @@
           
         &-primary
           background-color: colors.$mc-orange-1
-          color: colors.$mc-light-4
 
           &-effects
             &:hover
@@ -148,7 +136,6 @@
 
       &-success
         background-color: transparent
-        color: colors.$mc-green-1
 
         &-effects
           &:hover
@@ -159,7 +146,6 @@
 
         &-primary
           background-color: colors.$mc-green-1
-          color: colors.$mc-light-4
 
           &-effects
             &:hover
@@ -175,55 +161,23 @@
           border: 1.5px solid colors.$mc-green-1
 
       /* Disabled state */
-      &-disabled
-        &-basic-primary, &-default-primary, &-danger-primary, &-warning-primary, &-success-primary
+      &-disabled          
+        background-color: transparent
+        cursor: default
+
+        &-primary
           background-color: colors.$mc-dark-4
-          color: colors.$mc-dark-3
-          cursor: default
 
-        &-basic-secondary, &-default-secondary, &-danger-secondary, &-warning-secondary, &-success-secondary
-          background-color: transparent
-          color: colors.$mc-dark-3
-          cursor: default
-
-        &-basic-outline, &-default-outline, &-danger-outline, &-warning-outline, &-success-outline
-          background-color: transparent
+        &-outline
           border: 1.5px solid colors.$mc-dark-4
-          color: colors.$mc-dark-3
-          cursor: default
-
-        &-basic-tertinary, &-default-tertinary, &-danger-tertinary, &-warning-tertinary, &-success-tertinary
-          background-color: transparent
-          color: colors.$mc-dark-3
-          cursor: default
 
       &-loading-disabled
         cursor: default !important
         
       /* Sizes */
-      &-extra-large
-        width: 9.375rem //150px
-        height: 3rem //48px
-        font-size: 1.125rem // 18px
-        line-height: 1.75rem //28px
-        letter-spacing: 0rem
-
-        &-round
-          border-radius: 3.125rem // 50px
-
-        &-square
-          width: 3rem //48px
-
-        &-square-round
-          width: 3rem //48px
-          border-radius: 3.125rem // 50px
-
       &-large
         width: 8.438rem //135px
         height: 2.5rem //40px
-        font-size: 1rem // 16px
-        line-height: 1.5rem //24px
-        letter-spacing: 0rem
 
         &-round
           border-radius: 3.125rem // 50px
@@ -238,9 +192,6 @@
       &-medium
         width: 7.813rem //125 px
         height: 2.25rem //36px
-        font-size: 0.875rem // 14px
-        line-height: 1.25rem //20px
-        letter-spacing: 0rem
 
         &-round
           border-radius: 3.125rem // 50px
@@ -255,9 +206,6 @@
       &-small
         width: 6.875rem //110px
         height: 2rem //32px
-        font-size: 0.875rem // 14px
-        line-height: 1.25rem //20px
-        letter-spacing: 0rem
 
         &-round
           border-radius: 3.125rem // 50px

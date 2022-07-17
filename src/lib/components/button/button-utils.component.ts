@@ -6,10 +6,7 @@ import { McButtonColor, McButtonSize, McButtonType } from "./button.component.ty
     providedIn: null,
 })
 export class McButtonUtils {
-  public getIconSize(size: McButtonSize): McIconSize {
-    if (['extra-large', 'extra-large-round', 'extra-large-square', 'extra-large-square-round'].includes(size)) {
-      return 'extra-large';
-    }
+  public getBaseSize(size: McButtonSize): McIconSize {
     if (['large', 'large-round', 'large-square', 'large-square-round'].includes(size)) {
       return 'large';
     }
@@ -24,9 +21,6 @@ export class McButtonUtils {
 
   public getIconSizeInPixels(size: McButtonSize): number {
     switch (size) {
-        case 'extra-large' || 'extra-large-square': {
-          return 21;
-        }
         case 'large' || 'large-square': {
           return 18;
         }
@@ -42,19 +36,19 @@ export class McButtonUtils {
     }
   }
 
-  public getColorForIcon(disabled: boolean, color: McButtonColor, type: McButtonType): string {
+  public getColor(disabled: boolean, color: McButtonColor, type: McButtonType): string {
     if (disabled) {
-        return '#8F90A6';
+      return '#8F90A6';
     }
     else {
       switch (color) {
         case 'basic': {
-            switch (type) {
-            case 'primary': 
-                return '#FFFFFF';
-            default:
-                return '#1C1C28';
-            }
+          switch (type) {
+          case 'primary': 
+              return '#FFFFFF';
+          default:
+              return '#1C1C28';
+          }
         }
         case 'danger': {
           switch (type) {

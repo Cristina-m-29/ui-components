@@ -44,20 +44,20 @@
         <mc-icon
           [icon]="icon"
           [type]="iconType"
-          [color]="getColorForIcon"
-          [size]="iconSize"
+          [color]="colorForIcon"
           [sizeInPixels]="iconSizeInPixels"
         ></mc-icon>
       </ng-container>
 
-      <ng-content></ng-content>
+      <mc-label [size]="labelSize" [color]="colorForIcon">
+        <ng-content></ng-content>
+      </mc-label>
 
       <ng-container *ngIf="icon && iconPosition === 'right'">
           <mc-icon
             [icon]="icon"
             [type]="iconType"
-            [color]="getColorForIcon"
-            [size]="iconSize"
+            [color]="colorForIcon"
             [sizeInPixels]="iconSizeInPixels"
           ></mc-icon>
       </ng-container>

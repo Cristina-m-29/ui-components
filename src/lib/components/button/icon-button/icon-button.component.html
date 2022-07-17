@@ -1,16 +1,64 @@
-<mc-button
-  [color]="color"
-  [type]="type"
-  [size]="size"
-  [loading]="loading"
-  [disabled]="disabled"
-  [showOverlay]="showOverlay"
+<button
+  class="mc-button"
+  [disabled]="disabled || loadingDisabled"
+  [ngClass]="buttonCssClasses"
   (focus)="handleOnFocusEvent($event)"
 >
-  <mc-icon
-    [icon]="icon"
-    [type]="iconType"
-    [color]="getColorForIcon"
-    [size]="iconSize"
-  ></mc-icon>
-</mc-button>
+  <div
+    *ngIf="showOverlay"
+    class="mc-button-overlay mc-button-overlay-white"
+    [ngClass]="overlayCssClasses"
+    (click)="handleEvent($event)"
+    (dblclick)="handleEvent($event)"
+    (mousedown)="handleEvent($event)"
+    (mousemove)="handleEvent($event)"
+    (mouseout)="handleEvent($event)"
+    (mouseover)="handleEvent($event)"
+    (mouseup)="handleEvent($event)"
+    (mouseleave)="handleEvent($event)"
+    (mouseenter)="handleEvent($event)"
+    (contextmenu)="handleEvent($event)"
+    (wheel)="handleEvent($event)"
+  ></div>
+
+  <ng-container *ngIf="!loading; else isLoading">
+    <mc-icon
+      [icon]="icon"
+      [type]="iconType"
+      [color]="getColorForIcon"
+      [size]="iconSize"
+      (click)="handleEvent($event)"
+      (dblclick)="handleEvent($event)"
+      (mousedown)="handleEvent($event)"
+      (mousemove)="handleEvent($event)"
+      (mouseout)="handleEvent($event)"
+      (mouseover)="handleEvent($event)"
+      (mouseup)="handleEvent($event)"
+      (mouseleave)="handleEvent($event)"
+      (mouseenter)="handleEvent($event)"
+      (contextmenu)="handleEvent($event)"
+      (wheel)="handleEvent($event)"
+    ></mc-icon>
+  </ng-container>
+
+  <ng-template #isLoading>
+    <div 
+      [ngClass]="loaderCssClasses" 
+      (click)="handleEvent($event)"
+      (dblclick)="handleEvent($event)"
+      (mousedown)="handleEvent($event)"
+      (mousemove)="handleEvent($event)"
+      (mouseout)="handleEvent($event)"
+      (mouseover)="handleEvent($event)"
+      (mouseup)="handleEvent($event)"
+      (mouseleave)="handleEvent($event)"
+      (mouseenter)="handleEvent($event)"
+      (contextmenu)="handleEvent($event)"
+      (wheel)="handleEvent($event)"
+    >
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </ng-template>
+</button>

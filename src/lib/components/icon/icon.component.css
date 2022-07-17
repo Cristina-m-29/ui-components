@@ -4,14 +4,6 @@
   justify-content: center;
 }
 
-.svg-wrapper-extra-large {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 25px !important;
-  height: 25px !important;
-}
-
 .svg-wrapper-large {
   display: inline-flex;
   align-items: center;

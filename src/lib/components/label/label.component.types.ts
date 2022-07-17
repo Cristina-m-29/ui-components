@@ -1,0 +1,1 @@
+export declare type McLabelSize = 'large' | 'medium' | 'small';

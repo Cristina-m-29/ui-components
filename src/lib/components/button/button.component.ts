@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { McIconPosition, McIconSize, McIconType, McUIIcon } from '../icon/icon.component.types';
+import { McLabelSize } from '../label/label.component.types';
 import { McButtonUtils } from './button-utils.component';
 import { McButtonColor, McButtonSize, McButtonType, McButtonTypeEnum } from './button.component.types';
 
@@ -53,11 +54,14 @@ export class McButtonComponent implements OnChanges {
     const typeCssClass = `
       ${ (this.disabled) ? '' : themeColor }
       ${ (this.disabled || this.loadingDisabled) ? '' : `${themeColor}-effects` }
-      ${ (this.disabled) ? `${theme}-disabled-${this.color}-${this.type}` : `${themeColor}-${this.type}` }
+      ${ (this.disabled) 
+        ? `${theme}-disabled ${theme}-disabled-${this.type}` 
+        : `${themeColor}-${this.type}` 
+      }
       ${ (this.disabled || this.loadingDisabled) ? '' : `${themeColor}-${this.type}-effects` }
     `;
     
-    const sizeCssClass = `${theme}-${this.buttonUtils.getIconSize(this.size)} ${theme}-${this.size}`;
+    const sizeCssClass = `${theme}-${this.buttonUtils.getBaseSize(this.size)} ${theme}-${this.size}`;
 
     const shadowCssClass = this.type !== McButtonTypeEnum.TERTINARY ? this.BUTTON_SHADOW : '';
 
@@ -70,16 +74,16 @@ export class McButtonComponent implements OnChanges {
     return `${this.BUTTON_LOADER} ${this.BUTTON_LOADER}-${this.color}-${this.type}`;
   }
 
-  get iconSize(): McIconSize {
-    return this.buttonUtils.getIconSize(this.size);
+  get labelSize(): McLabelSize {
+    return this.buttonUtils.getBaseSize(this.size);
   }
 
   get iconSizeInPixels(): number {
     return this.buttonUtils.getIconSizeInPixels(this.size);
   }
 
-  get getColorForIcon(): string {
-    return this.buttonUtils.getColorForIcon(this.disabled, this.color, this.type);
+  get colorForIcon(): string {
+    return this.buttonUtils.getColor(this.disabled, this.color, this.type);
   }
 
   public handleOnFocusEvent(event: FocusEvent): void {

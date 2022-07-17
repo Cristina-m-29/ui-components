@@ -2,7 +2,7 @@ export declare type McUIIcon = "search" | "zoom-in" | "zoom-out" | "folder" | "w
 
 export declare type McIconType = "stoke" | "broken" | "filled";
 
-export declare type McIconSize = "extra-large" | "large" | "medium" | "small";
+export declare type McIconSize ="large" | "medium" | "small";
 
 export declare type McIconPosition = 'left' | 'right';
 

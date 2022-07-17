@@ -7,10 +7,6 @@ export enum McButtonTypeEnum {
 }
 
 export declare type McButtonSize = 
-  'extra-large' | 
-  'extra-large-round' | 
-  'extra-large-square' | 
-  'extra-large-square-round' | 
   'large'|
   'large-round' | 
   'large-square' | 
