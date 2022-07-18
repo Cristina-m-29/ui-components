@@ -1,3 +1,16 @@
-<p #mcLabel class="mc-label" [ngClass]="labelCssClass">
+<p 
+    #mcLabel 
+    class="mc-label" 
+    [class.mc-label-large]="size === 'large'"
+    [class.mc-label-medium]="size === 'medium'"
+    [class.mc-label-small]="size === 'small'"
+    [class.mc-label-grey]="color === 'grey'"
+    [class.mc-label-light]="color === 'light'"
+    [class.mc-label-dark]="color === 'dark'"
+    [class.mc-label-purple]="color === 'purple'"
+    [class.mc-label-red]="color === 'red'"
+    [class.mc-label-orange]="color === 'orange'"
+    [class.mc-label-green]="color === 'green'"
+>
     <ng-content></ng-content>
 </p>

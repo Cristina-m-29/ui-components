@@ -71,7 +71,7 @@ export class McButtonComponent implements OnChanges {
   }
 
   get loaderCssClasses(): string {
-    return `${this.BUTTON_LOADER} ${this.BUTTON_LOADER}-${this.color}-${this.type}`;
+    return `${this.BUTTON_LOADER}-${this.color}-${this.type}`;
   }
 
   get labelSize(): McLabelSize {
