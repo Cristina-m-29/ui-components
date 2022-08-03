@@ -1,8 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { McButtonModule, McTextModule } from 'dist';
-import { McIconModule } from 'src/lib/public_api';
+import { McButtonModule, McTextModule, McIconModule } from 'dist';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ButtonComponent } from './preview-components/button/button.component';

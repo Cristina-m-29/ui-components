@@ -8,8 +8,9 @@
     "watch": "ng build --watch --configuration development",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "build:lib": "ng-packagr -p ng-package.json",
-    "do": "ng-packagr -p ng-package.json && ng serve"
+    "build:lib": "npm run build:sass && ng-packagr -p ng-package.json",
+    "do": "ng-packagr -p ng-package.json && ng serve",
+    "build:sass": "sass src/lib/ui-components.sass assets/styles.css"
   },
   "private": false,
   "dependencies": {

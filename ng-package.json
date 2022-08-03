@@ -3,5 +3,6 @@
   "lib": {
     "entryFile": "./src/lib/public_api.ts"
   },
-  "allowedNonPeerDependencies": [ "angular", "core-js", "ng-packagr", "rxjs", "zone.js" ]
+  "allowedNonPeerDependencies": [ "angular", "core-js", "ng-packagr", "rxjs", "zone.js" ],
+  "assets": [ "./assets/*"]
 }
